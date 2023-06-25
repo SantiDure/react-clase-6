@@ -1,15 +1,14 @@
 import axios from "axios";
 
-async function serchImages() {
+async function serchImages(term) {
   const response = await axios.get("https://api.unsplash.com/search/photos", {
     headers: {
       Authorization: "Client-ID nIfOqSyd6e5qNfmEDlD2mE9WmB8bBfKBSwkTi3Gm0ZE",
     },
     params: {
-      query: "Boca Juniors",
+      query: term,
     },
   });
-  console.log(response);
   return response.data.results;
 }
 
